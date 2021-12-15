@@ -22,3 +22,16 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### initial command
+```
+$ vue create vue-router
+$ Manually select features > Router + Vuex
+```
+
+### router
+```
+<router-link to=""></router-link>
+<a href=""></a>
+```
