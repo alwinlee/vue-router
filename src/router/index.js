@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Travels from '../views/Travels.vue'
+import Spain from '../components/Spain.vue'
+import Finland from '../components/Finland.vue'
+import Czech from '../components/Czech.vue'
 
 const routes = [
   {
@@ -10,7 +14,12 @@ const routes = [
   {
     path: '/travels',
     name: 'Travels',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Travels.vue')
+    component: Travels, //() => import(/* webpackChunkName: "about" */ '../views/Travels.vue'),
+    children: [
+      { path: 'spain', name: 'spain', component: Spain },
+      { path: 'finland', name: 'finland', component: Finland },
+      { path: 'czech', name: 'czech', component: Czech },
+    ]
   },
   {
     path: '/about',
