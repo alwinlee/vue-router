@@ -1,12 +1,24 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/travels">Travels</router-link>
+    <router-link to="/" class="router-item">Home</router-link> |
+    <router-link to="/about" class="router-item">About</router-link> |
+    <router-link to="/travels" class="router-item">Travels</router-link>
   </div>
-  <router-view/>
+  <GoBack/>
+  <div class="view">
+    <router-view/>
+  </div>
 </template>
+<script>
+import GoBack from './components/GoBack.vue'
 
+export default {
+  name: 'App',
+  components: {
+    GoBack,
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -28,5 +40,9 @@
 
 #nav a.router-link-exact-active {
   color: #998f7f;
+}
+
+.view {
+  margin: 8px;
 }
 </style>
